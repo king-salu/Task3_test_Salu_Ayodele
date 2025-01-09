@@ -10,8 +10,7 @@
 
 <body>
     <div id="app"></div>
-    @viteReactRefresh
-    @vite('resources/js/app.jsx')
+    <script src="{{ mix('js/app.js') }}"></script>
 </body>
 
 </html>

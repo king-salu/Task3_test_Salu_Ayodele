@@ -1,26 +1,30 @@
 import React from "react";
-import TwitterLogin from "react-twitter-auth";
+import { auth, provider } from "./firebaseConfig";
+import { signInWithPopup } from "firebase/auth";
+import swal from 'sweetalert';
 
 const Login = () => {
     const onSuccess = (response) => {
-        response.json().then(body => {
-            const token = body.oauth_token;
-            console.log('User token:', token);
+        console.log('User token:', response);
+        swal('Login Successful', 'Authentication Successful', 'success');
+        window.setTimeout(() => {
+            location.href = '/home';
         });
     };
     const onFailed = (error) => {
-        console.log('Login failed:', error);
+        swal('Login failed', error, 'error');
+    };
+    const handleLogin = () => {
+        signInWithPopup(auth, provider)
+            .then(onSuccess)
+            .catch(onFailed);
     };
 
-    return (<div>
-        <h2>Login with Twitter</h2>
-        <TwitterLogin loginUrl="http://localhost:8000/v1/auth/twitter"
-            onFailure={onFailed} onSuccess={onSuccess}
-            requestTokenUrl="http://localhost:8000/v1/auth/twitter/reverse"
-            consumerKey="A8jjWZ09XlfZWDvtV4g1Ct7tP"
-            consumerSecret="OEdhBlHDjNSx8bTcQhRmSSlWNVmNXZZd703jwi236yjkRR0Waj"
-        />
-    </div>);
+    return (
+        <div> <h2>Login with Twitter</h2>
+            <button onClick={handleLogin}>Sign in with Twitter</button>
+        </div>
+    );
 };
 
 
