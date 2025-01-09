@@ -12,7 +12,8 @@ const Login = () => {
         });
     };
     const onFailed = (error) => {
-        console.log('login error: ', error);
+        console.log(error);
+        swal('Login failed', error.message, 'error');
     };
     const handleLogin = () => {
         signInWithPopup(auth, provider)
@@ -21,7 +22,9 @@ const Login = () => {
     };
 
     return (
-        <div> <h2>Login with Twitter</h2>
+        <div>
+            <h1>TEST</h1>
+            <h2>Login with Twitter</h2>
             <button onClick={handleLogin}>Sign in with Twitter</button>
         </div>
     );
