@@ -23,7 +23,6 @@ const Login = () => {
 
     return (
         <div>
-            <h1>TEST</h1>
             <h2>Login with Twitter</h2>
             <button onClick={handleLogin}>Sign in with Twitter</button>
         </div>
