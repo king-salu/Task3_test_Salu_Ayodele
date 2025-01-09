@@ -12,6 +12,7 @@ const Login = () => {
         });
     };
     const onFailed = (error) => {
+        console.log(error);
         swal('Login failed', error, 'error');
     };
     const handleLogin = () => {
