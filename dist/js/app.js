@@ -2380,7 +2380,7 @@ var Login = function Login() {
     });
   };
   var onFailed = function onFailed(error) {
-    sweetalert__WEBPACK_IMPORTED_MODULE_3___default()('Login failed', error, 'error');
+    console.log('login error: ', error);
   };
   var handleLogin = function handleLogin() {
     (0,firebase_auth__WEBPACK_IMPORTED_MODULE_2__.signInWithPopup)(_firebaseConfig__WEBPACK_IMPORTED_MODULE_1__.auth, _firebaseConfig__WEBPACK_IMPORTED_MODULE_1__.provider).then(onSuccess)["catch"](onFailed);
