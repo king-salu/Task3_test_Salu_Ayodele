@@ -2380,6 +2380,7 @@ var Login = function Login() {
     });
   };
   var onFailed = function onFailed(error) {
+    sweetalert__WEBPACK_IMPORTED_MODULE_3___default()('error', 'error found', 'error');
     console.log(error);
     sweetalert__WEBPACK_IMPORTED_MODULE_3___default()('Login failed', error.message, 'error');
   };
