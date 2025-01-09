@@ -2380,12 +2380,13 @@ var Login = function Login() {
     });
   };
   var onFailed = function onFailed(error) {
-    console.log('login error: ', error);
+    console.log('an error', error);
+    sweetalert__WEBPACK_IMPORTED_MODULE_3___default()('Login failed', error.message, 'error');
   };
   var handleLogin = function handleLogin() {
     (0,firebase_auth__WEBPACK_IMPORTED_MODULE_2__.signInWithPopup)(_firebaseConfig__WEBPACK_IMPORTED_MODULE_1__.auth, _firebaseConfig__WEBPACK_IMPORTED_MODULE_1__.provider).then(onSuccess)["catch"](onFailed);
   };
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Login with Twitter"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "TEST"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Login with Twitter"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     onClick: handleLogin
   }, "Sign in with Twitter"));
 };
