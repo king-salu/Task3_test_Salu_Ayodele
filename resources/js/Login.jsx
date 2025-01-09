@@ -13,7 +13,7 @@ const Login = () => {
     };
     const onFailed = (error) => {
         console.log(error);
-        swal('Login failed', error, 'error');
+        // swal('Login failed', error, 'error');
     };
     const handleLogin = () => {
         signInWithPopup(auth, provider)
