@@ -11,10 +11,9 @@ const Login = () => {
             location.href = '/home';
         });
     };
-    const onFailed = async (error) => {
-        await swal('error', 'error found', 'error');
-        console.log(error);
-        await swal('Login failed', error.message, 'error');
+    const onFailed = (error) => {
+        console.log('an error', error);
+        swal('Login failed', error.message, 'error');
     };
     const handleLogin = () => {
         signInWithPopup(auth, provider)
